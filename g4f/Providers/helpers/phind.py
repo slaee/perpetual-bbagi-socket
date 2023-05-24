@@ -8,12 +8,19 @@ from curl_cffi import requests
 config = json.loads(sys.argv[1])
 prompt = config['messages'][-1]['content']
 
+<<<<<<< HEAD
 skill = 'expert' if config['model'] == 'gpt-4' else 'intermediate'
 
 json_data = json.dumps({
     'question': prompt,
     'options': {
         'skill': skill,
+=======
+json_data = json.dumps({
+    'question': prompt,
+    'options': {
+        'skill': 'expert',
+>>>>>>> c05168bf69a050adb512e2679e9d220fb9dadf78
         'date': datetime.datetime.now().strftime('%d/%m/%Y'),
         'language': 'en',
         'detailed': False,
